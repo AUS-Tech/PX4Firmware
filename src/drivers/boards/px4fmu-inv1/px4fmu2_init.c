@@ -61,7 +61,6 @@
 #include <nuttx/gran.h>
 
 #include <stm32.h>
-#include "board_config.h"
 #include <stm32_uart.h>
 
 #include <arch/board/board.h>
@@ -71,6 +70,7 @@
 
 #include <systemlib/cpuload.h>
 #include <systemlib/perf_counter.h>
+#include "board_config.h"
 
 /****************************************************************************
  * Pre-Processor Definitions
