@@ -59,6 +59,10 @@
 #define	HW_ARCH "PX4FMU_V4PRO"
 #endif
 
+#ifdef CONFIG_ARCH_BOARD_PX4FMU_INV1
+#define	HW_ARCH "PX4FMU_INV1"
+#endif
+
 #ifdef CONFIG_ARCH_BOARD_AEROCORE
 #define	HW_ARCH "AEROCORE"
 #endif

@@ -31,7 +31,7 @@
 #
 ############################################################################
 px4_add_module(
-	MODULE drivers__boards__px4fmu-v2
+	MODULE drivers__boards__px4fmu-inv1
 	COMPILE_FLAGS
 		-Os
 	SRCS

@@ -898,6 +898,8 @@ Sensors::parameters_update()
 		_parameters.battery_voltage_scaling = 0.011f;
 #elif defined (CONFIG_ARCH_BOARD_PX4FMU_V2) || defined ( CONFIG_ARCH_BOARD_MINDPX_V2 ) || defined ( CONFIG_ARCH_BOARD_PX4FMU_V4PRO )
 		_parameters.battery_voltage_scaling = 0.0082f;
+#elif defined (CONFIG_ARCH_BOARD_PX4FMU_INV1)
+		_parameters.battery_voltage_scaling = 0.0082f;
 #elif defined (CONFIG_ARCH_BOARD_AEROCORE)
 		_parameters.battery_voltage_scaling = 0.0063f;
 #elif defined (CONFIG_ARCH_BOARD_PX4FMU_V1)
@@ -919,6 +921,8 @@ Sensors::parameters_update()
 		_parameters.battery_current_scaling = 0.0293f;
 #elif defined (CONFIG_ARCH_BOARD_PX4FMU_V2) || defined ( CONFIG_ARCH_BOARD_MINDPX_V2 ) || defined ( CONFIG_ARCH_BOARD_PX4FMU_V4PRO )
 		/* current scaling for 3DR power brick */
+		_parameters.battery_current_scaling = 0.0124f;
+#elif defined (CONFIG_ARCH_BOARD_PX4FMU_INV1)
 		_parameters.battery_current_scaling = 0.0124f;
 #elif defined (CONFIG_ARCH_BOARD_AEROCORE)
 		_parameters.battery_current_scaling = 0.0124f;

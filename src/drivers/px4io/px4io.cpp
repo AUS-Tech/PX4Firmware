@@ -1741,6 +1741,10 @@ PX4IO::io_get_status()
 	io_handle_vservo(regs[4], regs[5]);
 #endif
 
+#ifdef CONFIG_ARCH_BOARD_PX4FMU_INV1
+//	io_handle_vservo(regs[4], regs[5]);
+#endif
+
 	return ret;
 }
 

@@ -1,5 +1,5 @@
 #
-# Board-specific startup code for the PX4FMUv2
+# Board-specific startup code for the PX4FMUinv1
 #
 
 SRCS		 = px4fmu_can.c \
