@@ -176,7 +176,7 @@ __BEGIN_DECLS
 // ADC defines to be used in sensors.cpp to read from a particular channel
 #define ADC_BATTERY_VOLTAGE_CHANNEL	2
 #define ADC_BATTERY_CURRENT_CHANNEL	3
-#define ADC_5V_RAIL_SENSE		4
+#define ADC_5V_RAIL_SENSE		10
 #define ADC_AIRSPEED_VOLTAGE_CHANNEL	10
 
 /* User GPIOs
