@@ -243,9 +243,9 @@ __EXPORT int nsh_archinitialize(void)
 
 	/* configure the GPIO pins to outputs and keep them low */
 	stm32_configgpio(GPIO_SBUS_INV);
-	stm32_configgpio(GPIO_GPIO0_OUTPUT);
-	stm32_configgpio(GPIO_GPIO1_OUTPUT);
-	stm32_configgpio(GPIO_GPIO2_OUTPUT);
+	stm32_configgpio(GPIO_GPIO0_INPUT);
+	stm32_configgpio(GPIO_GPIO1_INPUT);
+	stm32_configgpio(GPIO_GPIO2_INPUT);
 	stm32_configgpio(GPIO_GPIO3_OUTPUT);
 	stm32_configgpio(GPIO_GPIO4_OUTPUT);
 	stm32_configgpio(GPIO_GPIO5_OUTPUT);
