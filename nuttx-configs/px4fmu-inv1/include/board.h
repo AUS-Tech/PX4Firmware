@@ -194,7 +194,7 @@
  *   DMAMAP_SDIO_2 = Channel 4, Stream 6
  */
 
-#define DMAMAP_SDIO DMAMAP_SDIO_1
+#define DMAMAP_SDIO DMAMAP_SDIO_2
 
 /* Alternate function pin selections ************************************************/
 
@@ -280,8 +280,8 @@
 //  only enable DMA on the sensor bus for now. We don't have enough
 //  spare DMA channels for the other sensors at the moment
 
-# define DMACHAN_SPI1_RX DMAMAP_SPI1_RX_1
-# define DMACHAN_SPI1_TX DMAMAP_SPI1_TX_1
+//# define DMACHAN_SPI1_RX DMAMAP_SPI1_RX_1
+//# define DMACHAN_SPI1_TX DMAMAP_SPI1_TX_1
 # define DMACHAN_SPI2_RX DMAMAP_SPI2_RX
 # define DMACHAN_SPI2_TX DMAMAP_SPI2_TX
 # define DMACHAN_SPI4_RX DMAMAP_SPI4_RX_2
