@@ -235,7 +235,7 @@ __EXPORT int nsh_archinitialize(void)
 	stm32_configgpio(GPIO_VDD_5V_PERIPH_OC);
 
 	/* configure the GPIO pins to outputs and keep them low */
-	stm32_configgpio(GPIO_GPIO0_OUTPUT);
+	stm32_configgpio(GPIO_GPIO0_INPUT);
 	stm32_configgpio(GPIO_GPIO1_OUTPUT);
 	stm32_configgpio(GPIO_GPIO2_OUTPUT);
 	stm32_configgpio(GPIO_GPIO3_INPUT);
