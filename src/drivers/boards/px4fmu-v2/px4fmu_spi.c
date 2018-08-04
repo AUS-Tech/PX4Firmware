@@ -102,10 +102,14 @@ __EXPORT void stm32_spiinitialize(void)
 	stm32_configgpio(GPIO_SPI_CS_EXT1);
 	stm32_configgpio(GPIO_SPI_CS_EXT2);
 	stm32_configgpio(GPIO_SPI_CS_EXT3);
+	/* AUS  */
+	stm32_configgpio(GPIO_SPI_CS_EXT4);
 	stm32_gpiowrite(GPIO_SPI_CS_EXT0, 1);
 	stm32_gpiowrite(GPIO_SPI_CS_EXT1, 1);
 	stm32_gpiowrite(GPIO_SPI_CS_EXT2, 1);
 	stm32_gpiowrite(GPIO_SPI_CS_EXT3, 1);
+	/* AUS  */
+	stm32_gpiowrite(GPIO_SPI_CS_EXT4, 1);
 #endif
 }
 
@@ -195,6 +199,8 @@ __EXPORT void stm32_spi4select(FAR struct spi_dev_s *dev, enum spi_dev_e devid, 
 		stm32_gpiowrite(GPIO_SPI_CS_EXT1, 1);
 		stm32_gpiowrite(GPIO_SPI_CS_EXT2, 1);
 		stm32_gpiowrite(GPIO_SPI_CS_EXT3, 1);
+		/* AUS  */
+        stm32_gpiowrite(GPIO_SPI_CS_EXT4, 1);
 		break;
 
 	case PX4_SPIDEV_EXT1:
@@ -203,6 +209,8 @@ __EXPORT void stm32_spi4select(FAR struct spi_dev_s *dev, enum spi_dev_e devid, 
 		stm32_gpiowrite(GPIO_SPI_CS_EXT1, !selected);
 		stm32_gpiowrite(GPIO_SPI_CS_EXT2, 1);
 		stm32_gpiowrite(GPIO_SPI_CS_EXT3, 1);
+        /* AUS  */
+        stm32_gpiowrite(GPIO_SPI_CS_EXT4, 1);
 		break;
 
 	case PX4_SPIDEV_EXT2:
@@ -211,6 +219,8 @@ __EXPORT void stm32_spi4select(FAR struct spi_dev_s *dev, enum spi_dev_e devid, 
 		stm32_gpiowrite(GPIO_SPI_CS_EXT1, 1);
 		stm32_gpiowrite(GPIO_SPI_CS_EXT2, !selected);
 		stm32_gpiowrite(GPIO_SPI_CS_EXT3, 1);
+        /* AUS  */
+        stm32_gpiowrite(GPIO_SPI_CS_EXT4, 1);
 		break;
 
 	case PX4_SPIDEV_EXT3:
@@ -219,7 +229,19 @@ __EXPORT void stm32_spi4select(FAR struct spi_dev_s *dev, enum spi_dev_e devid, 
 		stm32_gpiowrite(GPIO_SPI_CS_EXT1, 1);
 		stm32_gpiowrite(GPIO_SPI_CS_EXT2, 1);
 		stm32_gpiowrite(GPIO_SPI_CS_EXT3, !selected);
+        /* AUS  */
+        stm32_gpiowrite(GPIO_SPI_CS_EXT4, 1);
 		break;
+    /* AUS: TODO  */
+    case PX4_SPIDEV_HG1120:
+        /* Making sure the other peripherals are not selected */
+         stm32_gpiowrite(GPIO_SPI_CS_EXT0, 1);
+         stm32_gpiowrite(GPIO_SPI_CS_EXT1, 1);
+         stm32_gpiowrite(GPIO_SPI_CS_EXT2, 1);
+         stm32_gpiowrite(GPIO_SPI_CS_EXT3, 1);
+         /* AUS  */
+         stm32_gpiowrite(GPIO_SPI_CS_EXT4, !selected);
+        break;
 
 	default:
 		break;
