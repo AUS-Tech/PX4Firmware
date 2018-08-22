@@ -76,6 +76,8 @@ __EXPORT void stm32_spiinitialize(void)
 //	stm32_configgpio(GPIO_SPI_CS_HMC);
 //	stm32_configgpio(GPIO_SPI_CS_MPU);
 
+    stm32_configgpio(GPIO_SPI_CS_LSM9DS1_AG_BREAKOUT);
+
 	/* De-activate all peripherals,
 	 * required for some peripheral
 	 * state machines
@@ -90,6 +92,8 @@ __EXPORT void stm32_spiinitialize(void)
 //	stm32_configgpio(GPIO_EXTI_MAG_DRDY);
 //	stm32_configgpio(GPIO_EXTI_ACCEL_DRDY);
 //	stm32_configgpio(GPIO_EXTI_MPU_DRDY);
+
+    stm32_gpiowrite(GPIO_SPI_CS_LSM9DS1_AG_BREAKOUT, 1);
 #endif
 
 #ifdef CONFIG_STM32_SPI2
@@ -140,7 +144,7 @@ __EXPORT void stm32_spiinitialize(void)
 __EXPORT void stm32_spi1select(FAR struct spi_dev_s *dev, enum spi_dev_e devid, bool selected)
 {
 	/* SPI select is active low, so write !selected to select the device */
-//	switch (devid) {
+	switch (devid) {
 //	case PX4_SPIDEV_GYRO:
 //		/* Making sure the other peripherals are not selected */
 //		stm32_gpiowrite(GPIO_SPI_CS_GYRO, !selected);
@@ -186,9 +190,15 @@ __EXPORT void stm32_spi1select(FAR struct spi_dev_s *dev, enum spi_dev_e devid, 
 //		stm32_gpiowrite(GPIO_SPI_CS_MPU, !selected);
 //		break;
 //
-//	default:
-//		break;
-//	}
+
+	case PX4_SPIDEV_LSM9DS1_AG_BREAKOUT:
+      /* Making sure the other peripherals are not selected */
+	    /* And then select needed device */
+	    stm32_gpiowrite(GPIO_SPI_CS_LSM9DS1_AG_BREAKOUT, !selected);
+	    break;
+	default:
+		break;
+	}
 }
 
 __EXPORT uint8_t stm32_spi1status(FAR struct spi_dev_s *dev, enum spi_dev_e devid)
